@@ -7,7 +7,7 @@
 // @include       https://docs.google.com/*
 // @author        Alex Ivanov <ai@contributor.pw>
 // @developer     Alex Ivanov <ai@contributor.pw>
-// @version       2020.1.31
+// @version       1.0.0-1
 // @grant         GM_addStyle
 // @icon          https://raw.githubusercontent.com/contributorpw/my-greasy-fork/master/userscripts/Whitespaces%20(only%20pilcrow%20for%20the%20endline)%20in%20Google%20Docs/ico.png
 // @screenshot    https://raw.githubusercontent.com/contributorpw/my-greasy-fork/master/userscripts/Whitespaces%20(only%20pilcrow%20for%20the%20endline)%20in%20Google%20Docs/screenshot.png

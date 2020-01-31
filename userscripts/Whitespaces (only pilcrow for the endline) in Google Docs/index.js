@@ -9,8 +9,8 @@
 // @developer     Alex Ivanov <ai@contributor.pw>
 // @version       2020.1.31
 // @grant         GM_addStyle
-// @icon          https://gist.github.com/pp/pp/raw/icon.png
-// @screenshot    https://gist.github.com/pp/pp/raw/screenshot.png
+// @icon          https://raw.githubusercontent.com/contributorpw/my-greasy-fork/master/userscripts/Whitespaces%20(only%20pilcrow%20for%20the%20endline)%20in%20Google%20Docs/ico.png
+// @screenshot    https://raw.githubusercontent.com/contributorpw/my-greasy-fork/master/userscripts/Whitespaces%20(only%20pilcrow%20for%20the%20endline)%20in%20Google%20Docs/screenshot.png
 // @license       MIT
 // ==/UserScript==
 

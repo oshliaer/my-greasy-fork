@@ -16,5 +16,6 @@
 
 var style =
   '.kix-lineview > .kix-lineview-content > span > .goog-inline-block.kix-lineview-text-block:last-child:after{content:"¶";}';
-
+style +=
+  'span[class="goog-inline-block"]{background:#CFD8DC;border-radius: 4px;border: 1px solid;margin-right:1px;}';
 GM_addStyle(style);

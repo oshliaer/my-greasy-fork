@@ -6,7 +6,7 @@
 // @include       https://docs.google.com/spreadsheets/*
 // @author        Alex Ivanov <ai@contributor.pw>
 // @developer     Alex Ivanov <ai@contributor.pw>
-// @version       0.0.0-2
+// @version       0.0.1-0
 // @grant         none
 // @icon          https://raw.githubusercontent.com/contributorpw/my-greasy-fork/master/userscripts/Google%20Sheets%20Styles/ico.png
 // @screenshot    https://raw.githubusercontent.com/contributorpw/my-greasy-fork/master/userscripts/Google%20Sheets%20Styles/screenshot.png
@@ -15,7 +15,7 @@
 
 // User settings. Be free to change this.
 const SETTINGS = Object.freeze({
-  "font-size": "21px"
+  "font-size-aspect": 4
 });
 
 /**
@@ -30,8 +30,9 @@ const observation = () =>
             ...mutationRecord.target.querySelectorAll(".formula-content")
           ].forEach(
             formulaContentContainerElement =>
-              (formulaContentContainerElement.style["font-size"] =
-                SETTINGS["font-size"])
+              (formulaContentContainerElement.style["font-size"] = `${+[
+                ...document.querySelectorAll('input[aria-label*="Font size"]')
+              ][0].value + SETTINGS["font-size-aspect"]}px`)
           )
         );
       }).observe(cellInputContainerElement, {

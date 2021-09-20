@@ -50,13 +50,13 @@ const clearHTMLString_ = (htmlString) =>
       const sel = window.getSelection();
 
       if (a) md = anchorToMarkdown_(a);
-      else if (sel)
-        md = toMarkdown_(
-          `${document.title} | ${sel.toString()}`,
-          window.location
-        );
+      else if (sel.type === 'Range')
+        md = toMarkdown_(`${sel.toString()}`, window.location);
+      else {
+        md = toMarkdown_(`${document.title}`, window.location);
+      }
 
-      if (md) {
+      if (md.length) {
         GM_setClipboard(md);
         GM_notification(md, 'Copied');
         e.preventDefault();

@@ -37,15 +37,10 @@ const clearHTMLString_ = (htmlString) =>
 
 (() =>
   document.addEventListener('keydown', (e) => {
-    if (
-      e.code === 'KeyM' &&
-      e.ctrlKey &&
-      !e.altKey &&
-      !e.shiftKey &&
-      !e.metaKey
-    ) {
-      let md = '';
+    if (!e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
 
+    let md = '';
+    if (e.code === 'KeyM') {
       const a = document.querySelector('a:hover');
       const sel = window.getSelection();
 
@@ -55,11 +50,12 @@ const clearHTMLString_ = (htmlString) =>
       else {
         md = toMarkdown_(`${document.title}`, window.location);
       }
-
-      if (md.length) {
-        GM_setClipboard(md);
-        GM_notification(md, 'Copied');
-        e.preventDefault();
-      }
+    } else if (e.code === 'KeyI') {
+      md = `${document.title}`;
+    }
+    if (md.length) {
+      GM_setClipboard(md);
+      GM_notification(md, 'Copied');
+      e.preventDefault();
     }
   }))();

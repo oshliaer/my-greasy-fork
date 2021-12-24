@@ -40,18 +40,21 @@ const clearHTMLString_ = (htmlString) =>
     if (!e.ctrlKey || e.altKey || e.shiftKey || e.metaKey) return;
 
     let md = '';
+    const { location } = window;
     if (e.code === 'KeyM') {
       const a = document.querySelector('a:hover');
       const sel = window.getSelection();
 
       if (a) md = anchorToMarkdown_(a);
       else if (sel.type === 'Range')
-        md = toMarkdown_(`${sel.toString()}`, window.location);
+        md = toMarkdown_(`${sel.toString()}`, location);
       else {
-        md = toMarkdown_(`${document.title}`, window.location);
+        md = toMarkdown_(`${document.title}`, location);
       }
     } else if (e.code === 'KeyI') {
       md = `${document.title}`;
+    } else if (e.code === 'KeyV') {
+      md = `${document.title} ${location}`;
     }
     if (md.length) {
       GM_setClipboard(md);
